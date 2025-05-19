@@ -1,8 +1,22 @@
 from tkinter import *
+import subprocess
+
 
 def submit():
     name=entry.get()
+
+    # Use correct classpath format (Mac/Linux uses ":")
+    java_classpath = "/Users/praneelchetlapalli/Desktop/Java Programs:mysql-connector-j-9.2.0.jar"
+
+    # Java command
+    java_cmd = ["java", "-cp", java_classpath, "InsertAndFetchData", "test"]
+
+    # Run Java program
+    result = subprocess.run(java_cmd, capture_output=True, text=True)
+
+    #result = subprocess.run(["java", "/Users/praneelchetlapalli/Desktop/Java Programs/InsertAndFetchData", name], capture_output=True, text=True)
     print(name)
+    print(result)
 
 def delete():
     entry.delete(0,END)

@@ -1,4 +1,4 @@
-prof={"name": "Praneel","age":18,"courses":["Math","Compsci"]}
+prof={"name": ["Praneel","damn"],"age":18,"courses":["Math","Compsci"]}
 
 
 for ele,name in prof.items():
